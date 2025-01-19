@@ -1,0 +1,143 @@
+<html>
+	<head>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+Display:wght@700&display=swap" rel="stylesheet">
+		<meta name="keywords" content="Time, Clock, Date, Jam, Waktu, Tanggal">
+		<meta name="author" content="Romzi Yayan">
+		<meta http-equiv="Expires" content="-1">
+		<meta http-equiv="refresh" content="60">
+		<meta http-equiv="Content-Language" content="id-id">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Time View - WIB</title>
+		<link rel="icon" href="/icon.svg" type="image/svg+xml">
+		<script language="JavaScript" src="get_time.php"></script>
+		<script language="JavaScript">
+			var weekdaystxt=["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"]
+			var monthstxt=["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"]
+
+			var deltaD = (servertimeOBJ.getTime())-(new Date().getTime());
+			var displaySeconds = true; 
+			var interval;
+
+			function textdates(){
+				getthedate();
+				if (document.all||document.getElementById)
+				t=setTimeout("textdates()", interval); 
+			}
+
+			function getthedate(){
+			var clientDate = new Date();
+			var serverdate = new Date(clientDate.getTime()+deltaD);
+			var month=serverdate.getMonth()+1;
+			var day=serverdate.getDate();
+			var year=serverdate.getFullYear();
+			var hours=serverdate.getHours();
+			var minutes=serverdate.getMinutes();
+			var seconds=serverdate.getSeconds();
+			var milliseconds=serverdate.getMilliseconds();
+			//var dn="AM";
+			var minggu=weekdaystxt[serverdate.getDay()]
+			var bulan=monthstxt[serverdate.getMonth()]
+			//if (hours>=12){dn="PM";}
+			//if (hours>12){hours=hours-12;}
+			//if (hours==0){hours=12;}
+			if (hours<=9){hours="0"+hours;}
+			if (minutes<=9){minutes="0"+minutes;}
+			//if (month<=9){month="0"+month;}
+			//if (day<=9){day="0"+day;}
+
+			if (displaySeconds){
+				if (seconds<=9){seconds="0"+seconds;}
+				if (milliseconds>=10&&milliseconds<=99){milliseconds="0"+milliseconds;}
+				if (milliseconds<10){milliseconds="00"+milliseconds;}
+				//	var cdate="<div class='FontHari'>"+minggu+", "+day+" "+bulan+" "+year+"</div><div class='FontDigit'>"+hours+":"+minutes+":"+seconds+":"+milliseconds+" "+dn+" WIB</div>";
+				//	interval = 1000 - serverdate.getMilliseconds(); 
+				var cdate="<div class='FontHari'>"+minggu+", "+day+" "+bulan+" "+year+"</div><div class='FontDigit'>"+hours+":"+minutes+":"+seconds+" WIB</div>";
+				var titleTime = hours+":"+minutes+":"+seconds+" WIB";
+				interval = 10;
+			}
+			else{
+			//	var cdate="<div class='FontHari'>"+minggu+", "+day+" "+bulan+" "+year+"</div><div class='FontDigit'>"+hours+":"+minutes+" "+dn+" WIB</div>";
+				var cdate="<div class='FontHari'>"+minggu+", "+day+" "+bulan+" "+year+"</div><div class='FontDigit'>"+hours+":"+minutes+" WIB</div>";
+				var titleTime = hours+":"+minutes+" WIB";
+				interval = (60-seconds)*1000; 
+				}
+			if (document.all)
+				document.all.sTime.innerHTML=cdate;
+			else if (document.getElementById)
+				document.getElementById("sTime").innerHTML=cdate;
+			else {
+				document.write(cdate);
+			}
+			document.title = titleTime
+			}
+		</script>
+		<style>			 
+			.FontHari {
+				font-family: "Noto Sans Display", sans-serif;
+				font-optical-sizing: auto;
+				font-size: 3.75em;
+				font-style: normal;
+				color:#ffffff;
+				text-shadow: 3px 3px 5px #808080;
+			}
+			.FontDigit {
+				font-family: "Noto Sans Display", sans-serif;
+				font-optical-sizing: auto;
+				font-size: 7.5em;
+				font-style: normal;
+				color:#ffffff;
+				text-shadow: 3px 3px 5px #808080;
+			}
+			.Footer {
+				font-family: "Noto Sans", sans-serif;
+				font-optical-sizing: auto;
+				font-size: 1.875em;
+				font-style: normal;
+				text-shadow: 1.5px 1.5px 5px #808080;
+				color:#ffffff;
+			}
+			a {
+				text-decoration: none;
+				color: white;
+			}
+			a:visited {
+				color: white;
+				text-decoration: none;
+			}
+			a:hover {
+				color: blue;
+				text-decoration: underline;
+				text-shadow: 0px 0px 20px #ffff00
+			}
+		</style>
+	</head>
+	<body onload="textdates();updateTitle();" bgcolor="#000000" topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginwidth="0" marginheight="0">
+		<center>
+			<table width="100%" height="93%">
+				<tbody>
+					<tr>
+						<td width="100%" height="100%" align="center" valign="middle">
+							<div align="center">
+								<span id="sTime">
+									<div class="FontHari"></div>
+									<div class="FontDigit"></div>
+								</span>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="Footer">
+				<c>© 2025 Romzi Yayan</c>
+				&nbsp
+				<a href="Time_WITA.html">WITA</a>
+				&nbsp
+				<a href="Time_WIT.html">WIT</a>
+				&nbsp|&nbsp
+				<a href="#" onclick="location.reload(true);return false;">Reload</a>
+			</div>
+		</center>
+	</body>
+<html>
