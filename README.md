@@ -4,6 +4,6 @@
 <br/>
 <div align="justify">
   <p>
-    Clock website with NTP Server
+    Clock website with NTP Server <a href="https://timeview.rf.gd/" target="_blank">Website</a>
   </p>
 </div>
