@@ -1,0 +1,55 @@
+:root {
+	--color-black: black;
+	--color-white: white;
+	--color-yellow: yellow;
+	--color-red: red;
+}
+body {
+	background-color: var(--color-white);
+	--a--color: var(--color-black);
+	--text-color: var(--color-black);
+	--shadow-color: var(--color-red);
+}
+body.night {
+	background-color: var(--color-black);
+	--a--color: var(--color-white);
+	--text-color: var(--color-white);
+	--shadow-color: var(--color-yellow);
+}
+.FontHari {
+	font-family: "Noto Sans Display", sans-serif;
+	font-optical-sizing: auto;
+	font-size: 3.75em;
+	font-style: normal;
+	color: var(--text-color);
+	text-shadow: 3px 3px 5px #808080;
+}
+.FontDigit {
+	font-family: "Noto Sans Display", sans-serif;
+	font-optical-sizing: auto;
+	font-size: 7.5em;
+	font-style: normal;
+	color: var(--text-color);
+	text-shadow: 3px 3px 5px #808080;
+}
+.Footer {
+	font-family: "Noto Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-size: 1.875em;
+	font-style: normal;
+	color: var(--text-color);
+	text-shadow: 1.5px 1.5px 5px #808080;
+}
+a {
+	text-decoration: none;
+	color: var(--a--color);
+}
+a:visited {
+	color: var(--a--color);
+	text-decoration: none;
+}
+a:hover {
+	color: blue;
+	text-decoration: underline;
+	text-shadow: 0px 0px 20px var(--shadow-color)
+}
