@@ -16,10 +16,12 @@ function beliefmedia_ntp_time($host) {
 }
 
 // Usage
-$host = 'pool.ntp.org';
+$host = 'galleon-systems.co.uk';
 $timestamp = beliefmedia_ntp_time($host);
 $time = date('F j, Y, g:i a', $timestamp);
+$time_java = date('Y,m-1,d,H,i,s', $timestamp)​;
 
 echo "Timestamp from NTP server: " . $timestamp . "<br>";
 echo "Formatted time: " . $time;
+echo "var servertimeOBJ = new Date($time_java);var TimeZone = 'WIB';";
 ?>
