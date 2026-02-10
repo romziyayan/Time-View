@@ -1,4 +1,6 @@
 <?php
+date_default_timezone_set('Asia/Jakarta');
+
 function beliefmedia_ntp_time($host) {
     // See source for full implementation details
     $sock = socket_create(AF_INET, SOCK_DGRAM, SOL_UDP);
