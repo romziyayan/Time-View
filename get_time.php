@@ -23,7 +23,7 @@ $timestamp = beliefmedia_ntp_time($host);
 $time = date('F j, Y, g:i a', $timestamp);
 $timejava = date('Y,m-1,d,H,i,s', $timestamp);
 
-echo "Timestamp from NTP server: " . $timestamp . "<br>";
-echo "Formatted time: " . $time;
+// echo "Timestamp from NTP server: " . $timestamp . "<br>";
+// echo "Formatted time: " . $time;
 echo "var servertimeOBJ = new Date($timejava);var TimeZone = 'WIB';";
 ?>
