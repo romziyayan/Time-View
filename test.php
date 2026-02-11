@@ -21,7 +21,7 @@ function beliefmedia_ntp_time($host) {
 $host = 'galleon-systems.co.uk';
 $timestamp = beliefmedia_ntp_time($host);
 $time = date('F j, Y, g:i a', $timestamp);
-$timejava = date('Y,m-1,d,H,i,s', $timestamp)​;
+$timejava = date('Y,m-1,d,H,i,s', $timestamp);
 
 echo "Timestamp from NTP server: " . $timestamp . "<br>";
 echo "Formatted time: " . $time;
