@@ -22,8 +22,9 @@ $host = 'galleon-systems.co.uk';
 $timestamp = beliefmedia_ntp_time($host);
 $time = date('F j, Y, g:i a', $timestamp);
 $timejava = date('Y,m-1,d,H,i,s', $timestamp);
+$yearjava = date('Y', $timestamp);
 
 // echo "Timestamp from NTP server: " . $timestamp . "<br>";
 // echo "Formatted time: " . $time;
-echo "var servertimeOBJ = new Date($timejava);var TimeZone = 'WIB';";
+echo "var servertimeOBJ = new Date($timejava);var TimeZone = 'WIB';var CopyJava = new Date($yearjava);";
 ?>
