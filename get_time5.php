@@ -33,7 +33,7 @@ date_default_timezone_set('Asia/Jakarta');
 		return $timestamp;
 	}
 
-$timestamp = beliefmedia_ntp_time($host, $timeout);
+$timestamp = getTimeFromNTP($host, $timeout);
 $timejava = date('Y,m-1,d,H,i,s', $timestamp);
 
 echo "var servertimeOBJ = new Date($timejava);var TimeZone = 'WIB';";
