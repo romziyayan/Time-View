@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('Asia/Jakarta');
 
 	/**
 	 * Returns UNIX timestamp from a NTP server (RFC 5905)
@@ -31,3 +32,7 @@
 
 		return $timestamp;
 	}
+
+$timejava = date('Y,m-1,d,H,i,s', $timestamp);
+
+echo "var servertimeOBJ = new Date($timejava);var TimeZone = 'WIB';";
