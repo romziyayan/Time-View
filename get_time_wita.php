@@ -25,5 +25,5 @@ $timejava = date('Y,m-1,d,H,i,s', $timestamp);
 
 // echo "Timestamp from NTP server: " . $timestamp . "<br>";
 // echo "Formatted time: " . $time;
-echo "var servertimeOBJ = new Date($timejava);var TimeZone = 'WITA';";
+echo "let servertimeOBJ = new Date($timejava); let TimeZone = 'WITA';";
 ?>
