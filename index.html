@@ -54,15 +54,15 @@
 				if (milliseconds<10){milliseconds="00"+milliseconds;}
 				//	var cdate="<div class='FontHari'>"+minggu+", "+day+" "+bulan+" "+year+"</div><div class='FontDigit'>"+hours+":"+minutes+":"+seconds+":"+milliseconds+" "+dn+" WIB</div>";
 				//	interval = 1000 - serverdate.getMilliseconds(); 
-				var cdate="<div class='FontHari'>"+minggu+", "+day+" "+bulan+" "+year+"</div><div class='FontDigit'>"+hours+":"+minutes+":"+seconds+" WIB</div>";
-				var titleTime = hours+":"+minutes+":"+seconds+" WIB";
+				var cdate="<div class='FontHari'>"+minggu+", "+day+" "+bulan+" "+year+"</div><div class='FontDigit'>"+hours+":"+minutes+":"+seconds+" "+TimeZone+"</div>";
+				var titleTime = hours+":"+minutes+":"+seconds+" "+TimeZone;
 				var copytime = year;
 				interval = 10;
 			}
 			else{
 			//	var cdate="<div class='FontHari'>"+minggu+", "+day+" "+bulan+" "+year+"</div><div class='FontDigit'>"+hours+":"+minutes+" "+dn+" WIB</div>";
-				var cdate="<div class='FontHari'>"+minggu+", "+day+" "+bulan+" "+year+"</div><div class='FontDigit'>"+hours+":"+minutes+" WIB</div>";
-				var titleTime = hours+":"+minutes+" WIB";
+				var cdate="<div class='FontHari'>"+minggu+", "+day+" "+bulan+" "+year+"</div><div class='FontDigit'>"+hours+":"+minutes+" "+TimeZone+"</div>";
+				var titleTime = hours+":"+minutes+" "+TimeZone;
 				interval = (60-seconds)*1000; 
 				}
 			if (document.all)
@@ -93,7 +93,7 @@
 				</tbody>
 			</table>
 			<div class="Footer">
-				<c>&copy; <script>document.write(new Date().getFullYear());</script> Romzi Yayan</c>
+				<c>&copy; <script>document.write(servertimeOBJ.getFullYear());</script> Romzi Yayan</c>
 				&nbsp
 				<a href="Time_WITA.html">WITA</a>
 				&nbsp
