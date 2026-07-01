@@ -20,7 +20,7 @@ if (time() - $last < 0) {
 	$epoch_convert = 2208988800;
 	$vn = 3;
 
-	$servers = ['galleon-systems.co.uk','0.uk.pool.ntp.org','1.uk.pool.ntp.org','2.uk.pool.ntp.org','3.uk.pool.ntp.org'];
+	$servers = ['time.google.com','0.uk.pool.ntp.org','1.uk.pool.ntp.org','2.uk.pool.ntp.org','3.uk.pool.ntp.org'];
 	$server_count = count($servers);
 
 	//see rfc5905, page 20
